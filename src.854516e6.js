@@ -66,7 +66,9 @@ module.exports={version:"0.24.0"};
 "use strict";var e=require("./utils"),r=require("./helpers/bind"),i=require("./core/Axios"),n=require("./core/mergeConfig"),o=require("./defaults");function u(o){var s=new i(o),t=r(i.prototype.request,s);return e.extend(t,i.prototype,s),e.extend(t,s),t.create=function(e){return u(n(o,e))},t}var s=u(o);s.Axios=i,s.Cancel=require("./cancel/Cancel"),s.CancelToken=require("./cancel/CancelToken"),s.isCancel=require("./cancel/isCancel"),s.VERSION=require("./env/data").version,s.all=function(e){return Promise.all(e)},s.spread=require("./helpers/spread"),s.isAxiosError=require("./helpers/isAxiosError"),module.exports=s,module.exports.default=s;
 },{"./utils":"S1cf","./helpers/bind":"EDTP","./core/Axios":"OvAf","./core/mergeConfig":"OHvn","./defaults":"BXyq","./cancel/Cancel":"mIKj","./cancel/CancelToken":"tsWd","./cancel/isCancel":"V30M","./env/data":"xNqU","./helpers/spread":"X8jb","./helpers/isAxiosError":"wICU"}],"dZBD":[function(require,module,exports) {
 module.exports=require("./lib/axios");
-},{"./lib/axios":"nUiQ"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss");var i=require("notiflix/build/notiflix-notify-aio");const s=require("axios").default;
-},{"./sass/main.scss":"clu1","notiflix/build/notiflix-notify-aio":"MeeU","axios":"dZBD"}]},{},["Focm"], null)
-//# sourceMappingURL=/parcel-project-template/src.900277d5.js.map
+},{"./lib/axios":"nUiQ"}],"xjGr":[function(require,module,exports) {
+const e=require("axios").default,t="24739954-0d3e858e9f263100a20e7db59",a="https://pixabay.com/api/";function r(e){return fetch()}e({method:"post",url:"/user/12345",data:{firstName:"Fred",lastName:"Flintstone"}});
+},{"axios":"dZBD"}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss");var e=require("notiflix/build/notiflix-notify-aio"),t=i(require("./partials/fetch.js"));function i(e){return e&&e.__esModule?e:{default:e}}const n=document.querySelector('[name="searchQuery"]'),r=document.querySelector('[type="submit"]');let u="";function s(e){const i=e.target.value.trim();r.addEventListener("click",function(e){e.preventDefault(),(0,t.default)(i)})}n.addEventListener("input",s);
+},{"./sass/main.scss":"clu1","notiflix/build/notiflix-notify-aio":"MeeU","./partials/fetch.js":"xjGr"}]},{},["Focm"], null)
+//# sourceMappingURL=/parcel-project-template/src.854516e6.js.map
