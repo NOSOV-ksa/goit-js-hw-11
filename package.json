@@ -27,7 +27,9 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "handlebars": "^4.7.7",
     "notiflix": "^3.2.2",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "simplelightbox": "^2.10.1"
   }
 }
