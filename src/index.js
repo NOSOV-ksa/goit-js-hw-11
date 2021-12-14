@@ -1,32 +1,46 @@
 import './sass/main.scss';
-import photoCard from './partials/templait-gallary.hbs'
+import ApiService from './partials/fetch';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import fetchAPI from './partials/fetch.js';
+import photoCard from './partials/templait-gallary.hbs'
 // import creatList from './partials/templait-gallary.js'
 // import SimpleLightbox from "simplelightbox";
 
+const apiService = new ApiService();
+
+
+
 const refs = {
-    searchQuery: document.querySelector('[name="searchQuery"]'),
-    btnSubmit: document.querySelector('[type="submit"]'),
+    searchForm: document.querySelector("#search-form"),
+    btnLoadMore: document.querySelector('.load-more'),
     cardItems: document.querySelector('.card-item'),
-    search: "",
-}
+};
 
-// console.log(refs.search)
+refs.searchForm.addEventListener('submit', onSearchForm);
+refs.btnLoadMore.addEventListener('click', onLoadMore);
 
-refs.searchQuery.addEventListener('input', (e) => {
-    refs.search = e.currentTarget.value;
-});
-
-refs.btnSubmit.addEventListener('click', (e) => {
+function onSearchForm(e) {
     e.preventDefault();
-    fetchAPI(refs.search)
-        .then(request => request.json())
-        .then(cards => renderCard(cards));
-});
+    apiService.query = e.currentTarget.elements.searchQuery.value;
+    apiService.fetchService()
+    apiService.resetPage()
+};
 
-function renderCard(cards) {
-    console.log(cards)
-    const markup = photoCard(cards.hits)
-    refs.cardItems.innerHTML = markup
+function onLoadMore() {
+    apiService.fetchService()
 }
+
+
+// e.preventDefault();
+//     console.log(searchForm);
+
+    // fetchAPI(refs.search)
+    //     .then(request => request.json())
+    //     .then(cards => renderCard(cards));
+
+
+// function renderCard(cards) {
+//     console.log(cards)
+//     const markup = photoCard(cards.hits)
+//     refs.cardItems.innerHTML = markup
+// }
+

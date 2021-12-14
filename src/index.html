@@ -12,12 +12,20 @@
 
 <body>
   <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-  <div class="search">
-    <include src='./partials/form-search.html'></include>
-  </div>
-  <!-- <include src="./partials/example.html"></include> -->
-  <div class="card-item" js--card-item>
-    <!-- <include src='./partials/templait-gallary.html'></include> -->
+  <div class="container">
+
+    <div class="search">
+      <include src='./partials/form-search.html'></include>
+    </div>
+
+    <!-- <div class="card-item" js--card-item>
+      <include src='./partials/templait-gallary.hbs'></include>
+    </div> -->
+
+    <div>
+      <include src="./partials/btn-load-more.html"></include>
+    </div>
+
   </div>
 
   <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
