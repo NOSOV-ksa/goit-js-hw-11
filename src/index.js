@@ -6,8 +6,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
     searchForm: document.querySelector("#search-form"),
+    cardGallery: document.querySelector('.js--card-gallery'),
     btnLoadMore: document.querySelector('.load-more'),
-    cardGallery: document.querySelector('.card-gallery'),
 };
 
 refs.searchForm.addEventListener('submit', onSearchForm);
@@ -19,7 +19,6 @@ const apiService = new ApiService();
 
 function onSearchForm(e) {
     e.preventDefault();
-
     apiService.query = e.currentTarget.elements.searchQuery.value;
 
     apiService.fetchService()
@@ -27,17 +26,22 @@ function onSearchForm(e) {
         clearSearchForm()
         onRenderGalleryList(hits)
     })
-    apiService.resetPage()
+    // apiService.resetPage() /// ??переименовал??
 };
+
+refs.btnLoadMore.classList.add('is-hidden')
 
 function onLoadMore() {
     apiService.fetchService()
     .then(onRenderGalleryList)
 }
 
-function onRenderGalleryList (hits) {
-    refs.cardGallery.insertAdjacentHTML('beforeend', photoCard(hits))
+function onRenderGalleryList(hits) {
+    console.log(hits)
+    refs.cardGallery.insertAdjacentHTML('beforeend', photoCard(hits));
+    refs.btnLoadMore.classList.remove('is-hidden');
 }
+
 
 function clearSearchForm() {
     refs.cardGallery.innerHTML = '';
