@@ -7,7 +7,7 @@ export default class ApiService {
     this.keyAPI = "24739954-0d3e858e9f263100a20e7db59";
     this.searchQuery = '';
     this.page = 1;
-    this.perPage = 5;
+    this.perPage = 40;
   }
   async fetchService() {
 
@@ -15,9 +15,10 @@ export default class ApiService {
 
     return await fetch(url)
       .then(response => response.json())
-      .then(data => {
+      .then(articles => {
         this.incrementPage();
-        return data.hits
+        // console.log('articles-1---', articles)
+        return articles
       })
 }
 

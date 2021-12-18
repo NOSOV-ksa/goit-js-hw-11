@@ -1,6 +1,14 @@
-.js--card-gallery {
+.container {
+  background-color: tomato;
+  width: 1200;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.gallery {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   margin: 0px;
   padding: 0px;
   text-align: center;
@@ -10,8 +18,8 @@
 }
 
 .photo-card {
-  margin: 0px;
-  padding: 0px;
+  margin: 15px;
+  // padding: 15px;
   // position: relative;
   // display: flex;
   // align-items: flex-end;
