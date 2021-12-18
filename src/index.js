@@ -16,13 +16,10 @@ const refs = {
 refs.searchForm.addEventListener('submit', onSearchForm);
 refs.btnLoadMore.addEventListener('click', onLoadMore);
 
-// console.log(document.querySelector( '[name="searchQuery"]'))
-
 const apiService = new ApiService();
 
 function onSearchForm(e) {
     e.preventDefault();
-
 
     // apiService.query = e.currentTarget.elements.searchQuery.value.trim();
     const valueSearch = e.currentTarget.elements.searchQuery.value.trim();
@@ -65,7 +62,6 @@ function onRenderGalleryList(articles) {
 
     if (articles.totalHits === 0 || apiService.query === '') {
         Notify.failure('Sorry, there are no images matching your search query. Please try again.');
-        // Error;
     };
 
     if (refs.totalQuantyti > articles.totalHits) {
