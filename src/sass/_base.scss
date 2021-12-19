@@ -2,7 +2,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  // background-color: antiquewhite;
 }
 
 body {
@@ -35,17 +34,3 @@ img {
   height: 250px;
   object-fit: cover;
 }
-
-// .img {
-//   display: block;
-//   margin: 0px;
-//   padding: 0px;
-// }
-
-// .section {
-// padding: 10px 10px;
-// margin-left: auto;
-// margin-right: auto;
-// background-color: aqua;
-// height: 100%;
-// }

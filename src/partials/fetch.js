@@ -1,5 +1,4 @@
 const axios = require('axios');
-// const { re } = require('prettier');
 
 export default class ApiService {
   constructor() {
